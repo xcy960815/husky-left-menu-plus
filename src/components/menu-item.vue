@@ -4,8 +4,8 @@
     v-if="currentRoute && currentRoute.children && currentRoute.children.length > 0"
     :index="currentRoute.path"
   >
+    <i v-if="currentRoute.meta.menuIcon" :class="currentRoute.meta.menuIcon"></i>
     <template #title>
-      <i v-if="currentRoute.meta.menuIcon" :class="currentRoute.meta.menuIcon"></i>
       <span>{{ currentRoute.meta.menuName }}</span>
     </template>
     <template v-for="childRoute in currentRoute.children" :key="childRoute.name">
@@ -13,16 +13,16 @@
     </template>
   </el-submenu>
   <el-menu-item v-else-if="currentRoute && currentRoute.meta.link" index>
+    <i v-if="currentRoute.meta.menuIcon" :class="currentRoute.meta.menuIcon"></i>
     <template #title>
-      <i v-if="currentRoute.meta.menuIcon" :class="currentRoute.meta.menuIcon"></i>
       <a :target="currentRoute.meta.target" class="link-dom" :href="currentRoute.meta.link">{{
         currentRoute.meta.menuName
       }}</a>
     </template>
   </el-menu-item>
   <el-menu-item v-else-if="currentRoute && currentRoute.path" :index="currentRoute.path">
+    <i v-if="currentRoute.meta.menuIcon" :class="currentRoute.meta.menuIcon"></i>
     <template #title>
-      <i v-if="currentRoute.meta.menuIcon" :class="currentRoute.meta.menuIcon"></i>
       <span>{{ currentRoute.meta.menuName }}</span>
     </template>
   </el-menu-item>

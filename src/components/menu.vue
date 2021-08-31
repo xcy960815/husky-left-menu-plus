@@ -48,5 +48,6 @@ export default defineComponent({
 <style lang="less">
 .layout-aside-menu {
   border: none;
+  height: 100%;
 }
 </style>

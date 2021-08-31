@@ -9,6 +9,16 @@ import huskyLeftMenuPlus from 'husky-left-menu-plus' //引入改组件
 vue.use(huskyLeftMenuPlus)
 ```
 
+```html
+// in xxx.vue
+<template>
+    <husky-left-menu
+        :collapse="isCollapse"
+        :menu-data="routeList"
+    ></husky-left-menu>
+</template>
+```
+
 ```typescript
     // 参数类型
     menuData: {

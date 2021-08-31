@@ -1,10 +1,13 @@
 <template>
-  <husky-left-menu style="width: 200px" :menu-data="routes"></husky-left-menu>
+  <div style="width: 200px">
+    <husky-left-menu :collapse="isCollapse" :menu-data="routes"></husky-left-menu>
+  </div>
+
+  <el-button @click="isCollapse = !isCollapse">click me</el-button>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-
+import { defineComponent, ref, onMounted } from 'vue'
 export default defineComponent({
   name: 'App',
   setup() {
@@ -26,7 +29,11 @@ export default defineComponent({
         },
       },
     ])
-    return { routes }
+    const isCollapse = ref<Boolean>(false)
+    onMounted(() => {
+      console.log('onMounted')
+    })
+    return { routes, isCollapse }
   },
 })
 </script>
@@ -40,6 +47,9 @@ body,
 #app {
   height: 100%;
   width: 100%;
+}
+#app {
+  display: flex;
 }
 </style>
 <style lang="less" scoped>
