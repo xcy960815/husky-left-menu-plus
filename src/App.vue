@@ -1,27 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <husky-left-menu style="width: 200px" :menu-data="routes"></husky-left-menu>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
-  }
-});
+  setup() {
+    const routes = ref([
+      {
+        path: '/real-time-develop',
+        name: '/real-time-develop',
+        meta: {
+          menuIcon: 'el-icon-setting',
+          menuName: '实时开发',
+        },
+      },
+      {
+        path: '/task-list',
+        name: '/task-list',
+        meta: {
+          menuName: '任务列表',
+          menuIcon: 'el-icon-setting',
+        },
+      },
+    ])
+    return { routes }
+  },
+})
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  padding: 0;
+  margin: 0;
 }
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+}
+</style>
+<style lang="less" scoped>
 </style>

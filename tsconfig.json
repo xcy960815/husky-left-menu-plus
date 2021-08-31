@@ -1,39 +1,24 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "esnext",
+    "module": "es2015",
+    "declaration": true,
+    "declarationDir": "./dist/typing",
     "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
+    "sourceMap": false,
+    "noImplicitAny": false,
     "moduleResolution": "node",
-    "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "types": [
-      "webpack-env"
-    ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
     "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
+      "es6",
+      "dom"
     ]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/main.ts",
+    "dist",
   ]
 }
