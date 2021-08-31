@@ -1,13 +1,22 @@
 {
     "name": "husky-left-menu-plus",
-    "version": "0.1.0",
-    "private": true,
+    "version": "0.1.2",
+    "description": "适用于vue3的element-plus左侧菜单栏",
+    "main": "dist/index.umd.js",
+    "module": "dist/index.esm.js",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "NODE_ENV=production  rollup -c",
         "upload": "npm run build && npm publish"
     },
     "types": "./dist/typing/index.d.ts",
+    "keywords": [
+        "vue3",
+        "rollup",
+        "element-plus",
+        "menu"
+    ],
+    "author": "chongyu",
     "dependencies": {
         "element-plus": "^1.0.2-beta.71",
         "postcss": "^8.3.6",
