@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "module": "es2015",
-    "declaration": true,
-    "declarationDir": "./dist/typing",
+    "declaration": true, // 自动生成 type 类型声明文件
+    "declarationDir": "./temp",
     "strict": true,
     "sourceMap": false,
     "noImplicitAny": false,
@@ -11,14 +11,13 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es6",
-      "dom"
-    ]
+    "lib": ["es6", "dom"]
   },
+  "files": ["src/index.ts"],
+  "include": ["src/**/*.ts", "src/**/*.vue", "src"],
   "exclude": [
     "node_modules",
-    "src/main.ts",
-    "dist",
+    "dist"
+    // "example/**/*"
   ]
 }

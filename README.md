@@ -2,20 +2,19 @@
 
 ### 安装方法
 
+```shell
 npm install husky-left-menu-plus --save-dev
+```
 
 ```javascript
-import huskyLeftMenuPlus from 'husky-left-menu-plus' //引入改组件
-vue.use(huskyLeftMenuPlus)
+import huskyLeftMenuPlus from 'husky-left-menu-plus'; // 引入改组件
+vue.use(huskyLeftMenuPlus);
 ```
 
 ```html
 // in xxx.vue
 <template>
-    <husky-left-menu
-        :collapse="isCollapse"
-        :menu-data="routeList"
-    ></husky-left-menu>
+  <husky-left-menu :collapse="isCollapse" :menu-data="routeList"></husky-left-menu>
 </template>
 ```
 

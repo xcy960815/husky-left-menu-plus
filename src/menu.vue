@@ -1,7 +1,6 @@
 <template>
   <el-menu
     :default-active="defaultActive"
-    class="layout-aside-menu"
     :background-color="backgroundColor"
     :text-color="textColor"
     :active-text-color="activeTextColor"
@@ -14,38 +13,47 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import menuItem from './menu-item.vue'
+import { ElMenu } from 'element-plus';
+import { defineComponent, PropType } from 'vue';
+import menuItem from './menu-item.vue';
+import { IMenuProps } from './index';
 export default defineComponent({
-  components: { menuItem },
+  components: { menuItem, ElMenu },
   props: {
     menuData: {
-      type: Array,
+      type: Array as PropType<IMenuProps[]>,
       default: () => [],
     },
+
     defaultActive: {
       type: String,
       default: () => '',
     },
+
     collapse: { type: Boolean, default: false },
+
     backgroundColor: {
       type: String,
       default: () => '#001529',
     },
+
     textColor: {
       type: String,
       default: 'rgba(255,255,255,.65)',
     },
+
     activeTextColor: {
       type: String,
       default: '#fff',
     },
   },
-  name: 'husky-left-menu',
-})
+
+  name: 'husky-left-menu-plus',
+});
 </script>
 
 <style lang="less">
+@import url('element-plus/dist/index.css');
 .layout-aside-menu {
   border: none;
   height: 100%;
